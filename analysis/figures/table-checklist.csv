@@ -1,0 +1,7 @@
+Domain,Check,Key sources
+Code quality,"Does the analysis use well-established packages (tidyverse, ggplot2, and the appropriate modelling packages) rather than bespoke or obsolete alternatives? Would a colleague recognise the patterns?","@Wickham2016; @Wickham2019"
+Reproducibility,"Does the document render from a clean checkout? Are file paths managed with here and package versions recorded with renv? Are data and code archived with a DOI?",@Marwick2017
+References,"Is every citation in the bibliography file real, and has each one been verified against a publication database rather than taken from the AI's memory?",@Leung2023
+Statistics,"Does the analysis match the research question and data type? Are model assumptions checked? Did you ask the AI what could go wrong and act on useful answers?",@Messeri2024
+Disclosure,"Is the use of AI described in the acknowledgments, methods, or figure captions as required by the journal? Are AI tools listed with names and dates of use?",---
+Human judgment,"Can you explain and defend every analytical decision, including the ones the AI suggested? If the AI disappeared tomorrow, could you complete the analysis?",@Dyck2026

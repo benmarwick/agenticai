@@ -1,0 +1,17 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+renv/library/
+renv/local/
+renv/cellar/
+renv/lock/
+renv/python/
+renv/sandbox/
+renv/staging/
+CLAIMS/*
+!CLAIMS/.gitkeep
+!CLAIMS/README.md
+.httr-oauth
+.DS_Store
+.quarto

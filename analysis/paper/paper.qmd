@@ -1,0 +1,285 @@
+---
+title: "A Practical Guide to Responsible Agentic AI for Archaeological Data Analysis in R"
+title-block-published: "Last updated"  
+date: now
+date-format: long
+format: 
+  docx:
+    reference-doc: "../templates/template.docx"
+execute:
+  echo: true
+  warning: false
+  message: false
+  comment: "#>"
+  fig-path: "../figures/"
+  fig-dpi: 600
+filters:
+  - ../templates/scholarly-metadata.lua
+  - ../templates/pagebreak.lua
+bibliography: references.bib
+csl: "../templates/society-for-american-archaeology.csl"
+abstract: |
+  Generative AI tools can help archaeologists write analysis code, but the common web-chat interface produces average results and hallucinated references that are not publishable. This how-to article describes three practices that improve the quality and reliability of AI-assisted archaeological data analysis in R, so that AI-assisted work remains reproducible and trustworthy. First, archaeologists should develop enough familiarity with R to recognize high-quality code and steer AI toward well-established packages such as tidyverse and ggplot2. Second, AI is most useful for planning: researchers should draft a plan themselves, then ask AI for critiques, gaps, and alternative strategies, and use expert judgment to select the best suggestions. Third, researchers should use an AI agent running in a local harness such as OpenCode rather than a web-based chat, because agents can read project files, edit documents directly, use specialized tools for literature verification, and follow persistent project conventions. These three practices help archaeologists produce reproducible, trustworthy analyses that meet current standards for computational research while keeping human judgment firmly in control.
+keywords: |
+  artificial intelligence; archaeology; reproducible research; R; data analysis
+highlights: |
+  - AI chat produces average code; familiarity with R best-practice packages lets you steer it toward publishable output
+  - Draft an analysis plan, ask AI for critiques and alternatives, then choose with expert judgment
+  - An agent harness beats web chat: it reads your files, edits code directly, and verifies references
+---
+
+# Introduction
+
+Artificial intelligence is changing how archaeologists analyze data. A large language model (LLM) is a computer program trained on a very large body of text to predict the next word in a sequence, which lets it generate code, answer questions, and summarize documents. Archaeologists use these models to write R code, choose statistical approaches, search the literature, and draft manuscript sections. The literature on AI and archaeology is growing quickly: @Gattiglia2025 counted 27,100 publications in the last decade, doubling annually. A hallucination is an invented fact, most commonly in archaeology a citation to a paper that does not exist. Language models produce such citations (@Leung2023), write code that ignores good practice, and state confident claims that are wrong (@Messeri2024). Archaeologists who use AI without knowing these hazards can produce work that is difficult to trust.
+
+Agentic systems are models that act on files and tools rather than only answering prompts, and researchers have begun to classify them. @Haase2026 distinguished six levels for social science research: the lowest handle simple data processing, and the highest, Level 4 multi-agent systems and Level 5 complex adaptive systems, simulate emergent social dynamics and introduce risks of reproducibility failure, ethical oversight, and emergent bias. @Zimmer2026 proposed a parallel five-level taxonomy, from classical practice to AI as research associate, and released an open-source framework that turns command-line coding agents, including OpenCode, into autonomous research assistants; their longest single agent session ran over 20 hours and dispatched experiments across multiple nodes, yet they stressed that the human remains the principal investigator (@Zimmer2026). A web-based chat interface is an LLM-as-Tool: it produces text when prompted, but it cannot read project files, run code, or verify references. Using an agent harness moves researchers up this scale while keeping them in control.
+
+The problem is especially acute in data analysis. Machine learning is already transforming archaeological practice: @DominguezRodrigo2019 showed that machine-learning algorithms could classify experimental bone surface modifications, and @DominguezRodrigo2020 reached 92% accuracy distinguishing cut, tooth, and trampling marks, then applied the method to published images of purported hominin traces in Africa, America, and Europe. @CifuentesAlcobendas2019 achieved 95% accuracy on complete images of cut marks on fleshed versus defleshed bones, and 88.89% on internal mark features alone. Deep learning has also identified anthropogenic modifications on a carnivore remain at the Navalmaíllo rock shelter (Pinilla del Valle, Spain), suggesting Neanderthals used hyena pelts (@Moclan2024). Classifiers also distinguish carnivore tooth marks when combined with geometric morphometrics (@Courtenay2019), and best-practice guidance for computer vision in archaeology is now appearing (@BerganzoBesga2026). Publishing results still requires care: the data must suit the method, the code must meet reproducibility standards, and the results need domain knowledge, not just the model's output (@McPherron2022; @Courtenay2024).
+
+In this article, we describe three practices. First, know the tools well enough to judge AI output. Second, use AI to plan analyses before writing code. Third, use an AI agent in a local harness rather than web chat. Reproducibility is the ability to obtain results again by using the same data, code, and procedures provided by the original authors; the recommended format is a research compendium, a collection of the data, code, and text needed to reproduce an analysis (@Marwick2017).
+
+# Step 1: Know the Tools and the Standards
+
+The most important preparation is basic familiarity with R and the packages skilled researchers already use. Without it, AI generates average code; with it, you can direct AI toward excellent code.
+
+This point is not about becoming a software engineer. It is about knowing enough to recognize good code and to tell AI which packages to use. The tidyverse ecosystem (@Wickham2019) provides a consistent grammar for data wrangling and visualization; ggplot2 (@Wickham2016) produces publication-quality graphics; the here package and renv manage file paths and dependencies so analyses run on any computer (@Marwick2017); and Quarto (@Allaire2019) ties code, text, and results into a single reproducible document.
+
+When AI generates code without guidance, it may use base R functions, write loops instead of vectorized operations, or produce plots that violate best practices. In our review of recent archaeological manuscripts and a doctoral thesis, AI-generated R code skipped these packages entirely. The code ran, but it was harder to read, reproduce, and trust. LLM responses are also inconsistent: @Brown2026b found that models can mislead users about statistical methods, and that data context and specific instructions produce more consistent code. Postgraduate students need enough R to judge what AI produces (@Campbell2024; @Cooper2024); instructors adapt courses because students bring AI code generators to class (@LauGuo2023); and software developers need new skills to use AI well (@Kam2025). @Dyck2026 put it plainly: analysts must learn the fundamentals before they depend on AI.
+
+The practical step is simple. Before you ask AI to write code, work through a tidyverse tutorial, make a ggplot2 figure, and render a Quarto document. Once you have done these things yourself, you will recognize when AI output follows best practices, and you can tell the AI which packages to use and what style to expect. @Bridgeford2026's twelve tips for AI-assisted coding stress problem preparation, context management, testing and validation, and keeping human agency in coding decisions.
+
+A concrete example shows the difference. Suppose you ask an AI to produce a bar plot of artefact counts by site. An untrained request produces low-quality code:
+
+```{r}
+#| label: code-avg
+#| eval: false
+counts <- table(my_data$site)
+barplot(counts, col = "grey")
+```
+
+The plot works, but it has no axis labels or title, and the code is not reusable. A researcher who knows the ecosystem can instead specify a tidyverse solution:
+
+```{r}
+#| label: code-good
+#| eval: false
+library(dplyr)
+library(ggplot2)
+artefact_counts <- my_data |>
+  count(site) |>
+  arrange(desc(n))
+ggplot(artefact_counts, aes(x = reorder(site, n), y = n)) +
+  geom_col(fill = "#0072B2") +
+  labs(title = "Artefact counts by site", x = NULL, y = "Count") +
+  coord_flip() +
+  theme_minimal()
+```
+
+The second version follows established conventions (@Wickham2016; @Wickham2019), produces a publication-ready figure, and embeds directly in a reproducible report. Both are the AI entirely; what differs is the instruction. The familiarity described in this step is what turns the first into the second.
+
+# Step 2: Plan the Analysis with AI
+
+Once you know the tools, the next step is to use AI for planning before you write code. This is where AI is most useful and least risky: generating ideas, identifying gaps, and stress-testing a plan.
+
+The workflow is straightforward. Draft your analysis plan yourself first. You know your data, your research questions, and your archaeological context. Write a brief plan that describes your data, questions, methods, and expected findings. Then ask an AI to identify missing steps, potential problems, and alternative approaches, for example: "What could go wrong with this analysis? What assumptions am I making? What alternative methods should I consider?"
+
+AI can survey a wide range of methods and flag issues that a single researcher might overlook. @Korinek2023 identified ideation and feedback, background research, data analysis, coding, and mathematical derivations as areas where generative AI changes research practice; critiquing an analysis plan is ideation and feedback work. The range of methods AI can propose is widening: TabPFN outperforms all previous methods on datasets up to 10,000 samples, in 2.8 seconds where a tuned ensemble took 4 hours (@Hollmann2025), and a decoder-only model forecasts time series with zero-shot accuracy close to that of supervised per-dataset models (@Das2024).
+
+The garden of forking paths describes the hidden multiplicity a researcher creates when choosing among many defensible ways to clean, transform, and model data (@GelmanLoken2016). A single published analysis cannot show how strongly its conclusions depend on those choices. Multiverse analysis answers this by running the full set of defensible variants and grading the reported result against the distribution of outcomes (@Steegen2016). Two 2026 studies show that agentic AI brings the forking paths into plain view, and with that, both new risk and new remedy. @Miao2026 gave 42 human research teams the same immigration dataset and showed that AI agents assigned different personas reproduced 72% of the ideological gap between teams in reported effect estimates. The opposing agent analyses looked credible: 86% passed an independent AI review and 78% passed majority human expert review. The authors conclude that the usual problem is not flawed analysis but selective exploration and reporting from a space of methodologically defensible options, and that AI agents can amplify the problem by making exploration cheap. Their remedy is the m-value, the probability that an analysis path would produce a claim at least as extreme as the reported one, estimated by Agentic Bootstrap, which uses agents to sample plausible analysis paths. Reading the p-value and m-value together places a result in one of four categories. A low p-value with a high m-value indicates a robust signal. A low p-value with a low m-value flags an analysis-fragile result that depends on which defensible path was chosen. A high p-value with a high m-value suggests no effect. A high p-value with a low m-value indicates inconsistency across the analysis space. Applied to the human study, 13.5% of reported analyses fell in the most extreme 5% of the analysis space (m < 0.05). @Bertran2026 built a comparable multiverse with LLM-based agents screened by an AI auditor across three domains, found divergent hypothesis-support verdicts from identical data, and showed that conclusions shift with model and prompt choices. They argue that reliable automated data science requires multiverse-style reporting and prompt disclosure alongside code and data. For archaeology, the practical step is to instruct an agent to sample the space of defensible analyses, compute m-values, and report the multiverse alongside any headline result. The agent removes the cost barrier that kept robustness testing out of most projects, while the researcher stays at the helm, defining which paths are defensible and interpreting the distribution.
+
+But AI also makes poor suggestions. It may propose methods that do not fit your data, suggest inappropriate analyses, or recommend tools that do not exist. @Messeri2024 described how AI creates illusions of understanding: the output sounds authoritative even when it is wrong. Expert judgment remains essential. In our experience, the best approach is to ask AI for five suggestions, evaluate each against our knowledge of the data and literature, then select the best or combine elements into a new plan.
+
+You can also take your plan to a different AI model and ask it to critique the first model's suggestions. The value of a second opinion is documented: @Bertran2026 showed that conclusions can shift with model and prompt choices, so a different model may catch problems that the first one missed. Treat AI as a brainstorming partner whose suggestions require evaluation, not as an authority you follow without question.
+
+A short example clarifies the practice. Suppose you compare artefact densities between two excavation trenches with small sample sizes and plan to use a t-test. Ask an AI: "What am I missing? What could go wrong?" The AI might note that the data are counts with many zeros, violating t-test assumptions, and suggest a generalized linear model with a quasi-Poisson distribution, a permutation test, or an offset for excavation volume. It might also suggest a machine learning classifier trained on simulated densities, which would be inappropriate for two small samples of counts. Your expertise tells you which to adopt: choose the quasi-Poisson model, note the permutation test as a sensitivity check, and ignore the classifier.
+
+The same filter applies to the AI's own limits. Ask for justification: "Why is this the right model for count data with many zeros?" Check the reasoning against your own knowledge and the literature. This is the theory-first approach @Piper2026 recommends: theory operates as methodological infrastructure that constrains degrees of freedom and supports reproducibility. When the explanation does not withstand scrutiny, set the suggestion aside.
+
+# Step 3: Use an Agent Harness, Not Web Chat
+
+The common way to interact with AI is through a web-based chat interface: you type a question, the model responds, and you copy the result into your work. This approach is inefficient and unreliable for research. Web chat has no memory of your project files, no ability to edit your documents, no access to specialized tools, and it tends to produce references to papers that do not exist (@Leung2023).
+
+A better approach is an AI agent running in a local harness. An agent is an AI model connected to tools that let it act on your files and project. The model runs on a remote server, but the harness runs locally and gives the agent access to your data, code, and specialized tools. Your data stay on your machine; only prompts and returned text travel to the provider's server.
+
+Five advantages make agents superior to web chat for research.
+
+First, an agent can read all the files in your project whenever you tell it to. You need not upload documents or paste code into a chat window. The agent can reference specific lines in your Quarto document and understand the project structure. This saves time and reduces errors from incomplete context.
+
+Second, an agent can edit your files directly. Instead of copying code from a chat window, you can tell the agent to insert a function, modify a plot, or add a section to your manuscript. The agent writes the change, and you review the diff before committing it.
+
+Third, agents can run multiple tasks in parallel or in sequence. One agent can write code, another can run it, and a third can summarize the output. In @Haase2026's framework, multi-agent pipelines sit at Level 4. @Brown2026a tested a general-purpose agent (Roo Code) on three fisheries modelling workflows: fitting a von Bertalanffy growth curve, a generalized linear model of fish abundance from habitat, and a yield-per-recruit analysis. The agent completed all three tasks in some replicates, but accuracy varied widely, and all models sometimes overlooked instructions about which methods to use.
+
+Fourth, agents accept a context file that describes your project conventions, preferences, and standards. This file, typically called AGENTS.md, is read at the start of every interaction. If you want the agent to use snake_case for variable names, always include a Data Availability Statement, or follow the SAA Style Guide, you state that once and every response follows your conventions. A short example shows the idea:
+
+```
+# AGENTS.md (excerpt)
+- Use R and the tidyverse for all data analysis.
+- Keep code in a Quarto document under analysis/paper/.
+- Use the here package for file paths.
+- Use renv to manage the package library.
+- Follow the journal's style guide for citations.
+- Verify every reference before adding it to references.bib.
+- Never edit renv.lock without saying so.
+```
+
+This single file carries the standards of your project, so the AI does not need to guess them and you do not need to retype them.
+
+Fifth, agents can use specialized tools beyond code generation. Model Context Protocol (MCP) servers give agents access to scholarly literature databases and reference verification tools. Tools such as refcheck and open-scholar-peer search real publication databases and return verified bibliographic records. AI also functions as a measurement instrument, quantifying attributes in text, images, and audio (@Asirvatham2026). In our experience, this workflow has kept fabricated references out of our bibliographies: every reference an agent proposes should pass through a verification server before it is added. Web chat generates references from memory and frequently gets them wrong.
+
+The reference problem deserves emphasis. A chat interface cannot check whether a citation is real; it produces plausible-looking entries with real-sounding authors, titles, and journals, and many are fabricated. @Leung2023 documented ChatGPT generating fictitious citations and warned authors to check AI references for hallucination. An agent, by contrast, can verify each reference against Crossref, Semantic Scholar, or other databases, returning only entries that exist and including DOIs. When you draft a manuscript with an agent, you can instruct it to add only verified references and flag any citation it cannot confirm. Other MCP servers help archaeologists: markitdown converts PDFs and web pages to plain text; academic-mcp and ScholarMCP retrieve paper metadata and full texts; agent-style applies writing-quality rules. Archaeologists are also building LLM tools for their own questions, such as extracting structured knowledge from texts into knowledge graphs (@Hariri2025).
+
+Several agent harnesses are available. OpenCode (https://opencode.ai/) is open source and runs in the terminal or as a desktop application; Mimo Coder (https://mimo.xiaomi.com/coder) is another option. Both connect to remote AI models through services such as OpenRouter (https://openrouter.ai/), which provides access to many models through a single API. Free models work well for planning and occasional code generation; paid tiers give higher rate limits and stronger models.
+
+## Getting started in fifteen minutes
+
+Install OpenCode in a terminal or download the desktop application. Buy a small amount of credit on OpenRouter, create an API key, and connect the key in the agent's configuration file. Open the terminal in RStudio, navigate to your project directory, and start the agent there. Tell it to read your project files, including notes, data documentation, and the AGENTS.md conventions file. Then ask it to summarize your analysis plan and identify gaps.
+
+The remaining tooling is optional. Add reference-verification servers so that citations are checked against real databases, and a PDF-conversion tool so the agent can read papers you hand it. These take minutes to install and save hours across a research project.
+
+# Step 4: Use Skills, Tools, and MCP Servers
+
+An agent harness gives the model a place to work. Skills, tools, and MCP servers give it the working methods. A skill is a folder of instructions, scripts, and resources that an agent loads when a task matches its description (@Xu2026; @Anthropic2025Skills). Anthropic introduced the format in October 2025 and published it as an open standard in December 2025 (@Anthropic2025Skills). A tool is a function the agent can call, such as running a web search or looking up a DOI. The Model Context Protocol (MCP) is an open standard that connects agents to external data sources and tools (@Anthropic2024; @Hou2025).
+
+Skills encode the procedures a research team already trusts. A social-science team might install a systematic-review skill that searches databases, screens titles and abstracts, and extracts study characteristics, or a multiverse-analysis skill that runs every defensible specification of a model and summarizes the distribution of results with the specr and multiverse packages (@MasurScharkow2020; @SarmaKay2021). An archaeology team might install a compendium skill that structures a project with Quarto, the here package, and renv, so that any collaborator can reproduce the analysis from a clean checkout (@Marwick2017). The agent reads a skill's instructions only when it judges them relevant, so the skill adds expertise without crowding the context window with every procedure at once (@Xu2026). OpenCode discovers skills from a project's skills directory, and the compendium for this article includes skills for deep research, academic paper writing, and peer review.
+
+Most research tasks also need the agent to reach beyond the harness. An MCP server is a small program that exposes data or tools to the agent through a standard interface; the agent calls it the way it calls any built-in function (@Hou2025). Reference-verification servers such as refcheck and open-scholar-peer query Crossref, Semantic Scholar, and arXiv, and return verified records with DOIs. The markitdown server converts the PDFs of excavation reports and grey literature to plain text that the agent can read. The ScholarMCP and academic-mcp servers retrieve paper metadata and full texts, and the r-mcptools server gives the agent direct access to a running R session, so it can execute analysis code and read the output without copying files. These servers are connected to the compendium behind this article, and each one checks its output against real sources before the text reaches the bibliography. Agentic workflows are already appearing in disciplines close to archaeology: agentic AI is used for data discovery in the social sciences and humanities (@Routsis2026), for risk-aware digital twins of cultural heritage assets (@Pavlidis2025), and the archaeology literature now reviews both LLMs and machine learning pipelines for the discipline (@QiWen2025; @Bellat2025).
+
+MCP servers expand what an agent can do, and they expand what can go wrong. The protocol gives servers access to files, network calls, and code execution, so the official specification makes consent and data privacy explicit: the user must approve what data is shared and what actions tools take. Independent research has catalogued MCP's security threats, including prompt injection and tool poisoning, which often enter through untrusted content (@Hou2025). The risk is manageable with three habits: run servers from sources you trust, give each server the narrowest access your task needs, and review what a new server can read or execute before you connect it.
+
+1. **List the repetitive tasks** in your workflow, such as searching the literature, verifying references, or running sensitivity analyses.
+2. **Find a skill that matches each task,** or write a SKILL.md file that encodes your own procedure.
+3. **Connect an MCP server** for each external data source, starting with a reference-verification server.
+4. **Test each new capability** on a known input, and check the output against an expected result before you rely on it.
+
+Skills, tools, and MCP servers move the unit of reuse from the prompt to the packaged procedure. A prompt is private and typed once. A skill is a documented, versioned, shareable method that any collaborator or future reader can inspect. That is the property reproducible archaeology requires: the same structured capability, applied the same way, every time (@Marwick2017; @Booeshaghi2026).
+
+## Assemble the workflow
+
+Putting these three practices together produces a workflow that is more reliable and efficient than working alone or using web-based AI chat. @fig-workflow summarizes the process.
+
+```{r}
+#| label: fig-workflow
+#| fig-cap: "A practical workflow for agentic AI-assisted archaeological data analysis in R. Each step builds on the previous one, with expert judgment applied throughout."
+#| fig-width: 8
+#| fig-height: 5
+
+# Draw the workflow diagram using base R graphics (no extra packages needed)
+par(mar = c(1, 1, 2, 1))
+plot.new()
+plot.window(xlim = c(0, 10), ylim = c(0, 7), asp = NA)
+
+# node definitions: x, y, label, fill colour
+nodes <- list(
+  list(x = 1, y = 4, label = "1. Learn\nR basics",              fill = "#0072B2"),
+  list(x = 3, y = 4, label = "2. Plan\nanalysis",               fill = "#E69F00"),
+  list(x = 5, y = 4, label = "3. Critique\nwith AI",            fill = "#E69F00"),
+  list(x = 7, y = 4, label = "4. Generate\ncode in agent",      fill = "#56B4E9"),
+  list(x = 9, y = 4, label = "5. Verify,\nrender, archive",     fill = "#009E73")
+)
+
+draw_node <- function(n) {
+  rect(n$x - 0.8, n$y - 0.85, n$x + 0.8, n$y + 0.85,
+       col = n$fill, border = "grey30", lwd = 1.2)
+  text(n$x, n$y, labels = n$label, cex = 0.9, font = 2)
+}
+
+invisible(lapply(nodes, draw_node))
+
+# forward arrows
+arrow_left <- function(x1, y, x2) {
+  arrows(x1, y, x2, y, length = 0.08, lwd = 1.5, col = "grey30")
+}
+invisible(mapply(arrow_left, c(1.85, 3.85, 5.85, 7.85),
+                 rep(4, 4), c(2.7, 4.7, 6.7, 8.7)))
+
+# feedback arrows (dashed, lower down)
+mapply(function(x1, x2) {
+       arrows(x1, 3.1, x2, 3.1, length = 0.08, lwd = 1.2,
+              col = "grey40", lty = 2)
+     }, c(5.2, 7.2), c(3.4, 5.4))
+
+text(4, 2.5, "revise plan", cex = 0.8, font = 3, col = "grey30")
+text(6, 2.5, "revise plan", cex = 0.8, font = 3, col = "grey30")
+text(5, 6.3, "Expert judgment at every step",
+     cex = 0.95, font = 3, col = "grey25")
+```
+
+Start by learning enough R to recognize good code. Then draft an analysis plan and ask AI to critique it, selecting the best suggestions with your own judgment. Use an agent harness to generate code inside a Quarto document that keeps code, results, and text in one file (@Allaire2019). Keeping the record machine-readable lets agents and future readers engage with it directly (@Booeshaghi2026). Verify references against real publication databases, then render the document and archive the data and code with a DOI (@Marwick2017).
+
+A few practical tips help. Keep your Quarto document organized with clear section headers. Use the here package for file paths so the document renders on any computer, and renv to record package versions so your analysis can be recreated years from now. Store data in open formats in a repository such as tDAR, Zenodo, or the Open Science Framework. These are established best practices for reproducible archaeology; AI makes them easier to follow, not less necessary.
+
+## A checklist before you publish
+
+A short checklist helps you confirm the AI-assisted parts of your workflow meet field standards:
+
+1. **Code quality.** Does the analysis use well-established packages (tidyverse, ggplot2, and the appropriate modelling packages) rather than bespoke or obsolete alternatives? Would a colleague recognize the patterns? (@Wickham2016; @Wickham2019)
+2. **Reproducibility.** Does the document render from a clean checkout? Are file paths managed with here and package versions recorded with renv? Are data and code archived with a DOI? (@Marwick2017)
+3. **References.** Has every citation been verified against a publication database rather than taken from the AI's memory? (@Leung2023)
+4. **Statistics.** Does the analysis match the research question and data type? Are model assumptions checked? Did you ask the AI what could go wrong and act on useful answers? (@Messeri2024)
+5. **Disclosure.** Is the use of AI described in the acknowledgments, methods, or figure captions as required by the journal?
+6. **Human judgment.** Can you explain and defend every analytical decision, including the ones the AI suggested? If the AI disappeared tomorrow, could you complete the analysis? (@Dyck2026)
+
+# Discussion
+
+Unguided AI output fails archaeology in three predictable ways: it produces functional but mediocre code (@Brown2026a), plausible but inappropriate analyses (@Brown2026b), and references that do not exist (@Leung2023). @Messeri2024 explained why these outputs can still sound authoritative: AI creates illusions of understanding, so researchers believe they understand more than they do. The three practices we describe address these failure modes directly, and each puts the researcher, not the model, in control.
+
+Knowing the tools means you can steer AI toward packages and methods that meet disciplinary standards. Planning with AI means you benefit from its breadth of knowledge while applying your own judgment to filter poor suggestions. Using an agent harness means the AI can see your full project, edit your files, and check its own references against real databases (@Leung2023).
+
+These practices have limitations. They require an initial investment of time to learn R basics, install an agent harness, and set up reference-verification tools. Agent harnesses are still maturing, and their interfaces change frequently. Not all archaeological analyses benefit equally from AI assistance: simple descriptive statistics or well-established methods may not need it, while complex models or unfamiliar packages may still require expert human coding. AI models vary in quality, and free models may produce lower-quality output than paid alternatives, though the gap is narrowing.
+
+Guidance for using AI responsibly is accumulating across the sciences, so archaeologists do not need to start from scratch. Computational biologists have ten quick tips for working with ChatGPT (@Lubiana2023). Medical researchers have a tutorial on using large language models in research (@Jin2026). @Helmy2025 derived ten rules from a review of over 100 policy documents. In higher education, AI use and misuse by students, and unequal access to the tools, have prompted calls for assessment reform (@Chirikov2026). Archaeologists can draw on field-specific guides: an Indigenous perspective examines how AI reconstructs Chumash history (@Holguin2023), a research handbook consolidates anthropology and AI (@UdupaHervik2026), and @Graham2025 offers an introduction to AI for archaeology and history students.
+
+The risk of over-reliance remains. AI can create what @Moriguchi2026 called the tension between fast and slow science: the speed of AI-generated results can tempt researchers to skip the careful thinking that produces reliable knowledge. The practices described here slow the process down in the right places. You think before you code, plan before you generate, and verify before you publish. The result is more trustworthy science, not slower science.
+
+# Conclusion
+
+Three practices help archaeologists use AI responsibly in R. First, develop enough familiarity with R to recognize high-quality code and direct AI to use well-established packages. Second, draft your analysis plan yourself, then use AI to critique it, applying expert judgment to select the best suggestions. Third, use an AI agent in a local harness instead of web chat, so it can read project files, edit documents, verify references, and follow project conventions.
+
+Human-in-the-loop (HITL) design inserts a person at discrete decision points in an otherwise automated workflow, where the researcher reviews or corrects the machine's output rather than directing the work itself (@Zanzotto2019; @Taylor2023). The "human at the helm" framing goes further: the researcher sets the goals, steers the analysis, interprets the results, and retains responsibility throughout, so the AI acts as an instrument rather than the driver (@Monakhov2026; @Jonker2024; @Hao2025). We adopt the latter position for research with AI, because scientific judgment, interpretation, and accountability cannot be delegated to a system that is indifferent to the truth of its outputs (@Hicks2024).
+
+These practices keep human judgment at the center of the research process. The researcher decides what questions to ask, what methods to use, and what the results mean. The skills that have always defined good archaeological practice, careful reading, critical thinking, and methodological discipline, apply unchanged to working with AI. By combining archaeological expertise with well-chosen AI tools, researchers can produce analyses that are both efficient and trustworthy (@Marwick2017). The field will keep changing as tools improve, but the underlying principle will not: the better you know your craft, the better you can direct the machines that assist you.
+
+# Acknowledgments
+
+No permits were required for the preparation of this manuscript. This article describes general practices for using AI tools in archaeological data analysis. The author used OpenCode (https://opencode.ai/), an open-source AI coding agent, and OpenRouter (https://openrouter.ai/) to assist with drafting, code verification, and reference checking during the preparation of this manuscript. All AI-generated suggestions were reviewed and revised by the author.
+
+# Funding Statement
+
+This research received no specific grant funding from any funding agency, commercial or not-for-profit sectors.
+
+# Data Availability Statement
+
+No original data were used.
+
+# Competing Interests
+
+The author declares none.
+
+# Notes
+
+This manuscript was prepared as a Quarto document within an rrtools research compendium. The rendered output files (paper.docx) and the Colophon section at the end of this document are internal to the compendium and should be removed before submission to a journal.
+
+# References
+
+::: {#refs}
+:::
+
+\newpage
+
+### Colophon
+
+This report was generated on `r Sys.time()` using the following computational environment and dependencies:
+
+```{r}
+#| label: colophon
+#| cache: false
+
+# which R packages and versions?
+if ("devtools" %in% installed.packages()) devtools::session_info()
+```
+
+The current Git commit details are:
+
+```{r}
+# what commit is this file at? 
+if ("git2r" %in% installed.packages() & git2r::in_repository(path = ".")) git2r::repository(here::here())  
+```

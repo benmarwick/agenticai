@@ -1,0 +1,15 @@
+Package: agenticai
+Title: Agentic AI for Archaeology
+Version: 0.0.0.9000
+Authors@R:
+    person("Ben", "Marwick", , "benmarwick@hotmail.com", role = c("aut", "cre"))
+Description: Research compendium for agentic AI applied to archaeology.
+License: MIT + file LICENSE
+ByteCompile: true
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 8.1.0
+Imports: here
+Suggests: devtools,
+    git2r

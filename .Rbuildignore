@@ -1,0 +1,14 @@
+^renv$
+^renv\.lock$
+^LICENSE\.md$
+^README\.qmd$
+^README-.*\.png$
+^CONDUCT\.md$
+^CONTRIBUTING\.md$
+^\.binder/Dockerfile$
+^\.binder$
+analysis
+^Dockerfile$
+^render-in-docker\.yaml$
+^.*\.Rproj$
+^\.Rproj\.user$
