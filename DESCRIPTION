@@ -13,3 +13,5 @@ RoxygenNote: 8.1.0
 Imports: here
 Suggests: devtools,
     git2r
+URL: https://github.com/benmarwick/agenticai
+BugReports: https://github.com/benmarwick/agenticai/issues
