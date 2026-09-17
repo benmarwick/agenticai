@@ -1,6 +1,6 @@
-Advantage,Web chat,Agent harness
-"Project awareness","No memory of your files; you must upload or paste code","Reads all project files on request, references specific lines, and understands project structure @Brown2026a"
-"Direct editing","You copy code from the chat window into your document","Edits files directly: inserts functions, modifies plots, adds sections; you review the diff before committing"
-"Parallel and sequential tasking","One prompt at a time","Multiple agents can write code, run it, and summarise output in sequence or in parallel @Gattiglia2025"
-"Persistent conventions","You restate your preferences in every message","A context file (AGENTS.md) is read at the start of every interaction; standards apply without repetition @Helmy2025"
-"Specialised tools","Cannot access external databases or verification services","Uses MCP servers to verify references against Crossref and Semantic Scholar, convert PDFs, and retrieve metadata @Asirvatham2026"
+Capability,What to check,Researcher action
+Project context,"Which files and tool outputs can enter the model context?","Provide only approved material and inspect the agent's summary"
+File editing,"Can the software restrict changes to the intended files?","Test a small edit in a disposable project and inspect the Git diff"
+Code execution,"Which commands require approval and where do they run?","Review commands and independently check outputs"
+Project instructions,"How does the software load and prioritize written conventions?","Document conventions and check compliance rather than assuming it"
+External tools,"Which services receive information and what do they return?","Test each connection on known inputs before using it in research"

@@ -1,4 +1,4 @@
-Practice,What it means,Failure mode it addresses
-Know the tools,"Develop enough familiarity with R to recognise high-quality code and steer AI toward well-established packages such as tidyverse and ggplot2","AI produces functional but mediocre code that is hard to read, reproduce, or trust @Brown2026b"
-Plan with AI,"Draft an analysis plan yourself, then ask AI to critique it, identify gaps, and suggest alternatives; apply expert judgment to select the best options","AI proposes statistically inappropriate methods or methods that do not fit your data @Messeri2024; @Piper2026"
-Use an agent harness,"Run AI in a local harness such as OpenCode rather than a web chat interface, so the model can read project files, edit code, and verify references","Web chat fabricates references, cannot see your project, and requires manual copy-paste @Leung2023; @Graham2025"
+Practice,Actions,Problem it addresses
+Learn the research tools and standards,"Practice R analysis, Quarto rendering, and Git review; check calculations against known results","Code and reports accepted without understanding the calculation or inspecting changes [@Wilson2014]"
+Configure an agent harness,"Select a model and harness, specify project conventions, and test permissions","Uncontrolled file changes or sharing of project content with unapproved services"
+Use skills and tools to research and analyze,"Retrieve sources, critique a researcher-written plan, execute approved code, and verify and archive the results","Unsupported citations, unsuitable methods, and untested outputs [@Leung2023; @Messeri2024]"
