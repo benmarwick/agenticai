@@ -9,3 +9,6 @@ Skill,deep-research,[@Anthropic2025Skills],Agent team for literature search veri
 Skill,r-style-guide,[@Anthropic2025Skills],Naming spacing layout and function design conventions for R
 Skill,tidyverse-patterns,[@Anthropic2025Skills],Modern pipes joins grouping and string handling across the tidyverse
 Skill,quarto-authoring,[@Anthropic2025Skills],Authoring with Quarto documents cross-references citations and extensions
+Skill,zotero-cli,[@ZoteroMCP2026],Searches reads and annotates the author's Zotero library from the shell
+Instructions,global AGENTS.md,[@OpenCodeRules2026],Global style verification, operating rules, model persona and response rules (no sycophancy, list of banned words, etc.) for every session
+Instructions,project-specific AGENTS.md,[@OpenCodeRules2026],Specific custom project context and instructions auto-loaded at the start of each session
