@@ -1,6 +1,0 @@
-Capability,What to check,Researcher action
-Project context,"Which files and tool outputs can enter the model context?","Provide only approved material and inspect the agent's summary"
-File editing,"Can the software restrict changes to the intended files?","Test a small edit in a disposable project and inspect the Git diff"
-Code execution,"Which commands require approval and where do they run?","Review commands and independently check outputs"
-Project instructions,"How does the software load and prioritize written conventions?","Document conventions and check compliance rather than assuming it"
-External tools,"Which services receive information and what do they return?","Test each connection on known inputs before using it in research"
