@@ -6,6 +6,8 @@ MAINTAINER Your Name <your_email@somewhere.com>
 
 COPY . /<REPO>
 
+WORKDIR /<REPO>
+
 # go into the repo directory
 RUN . /etc/environment \
   # Install linux depedendencies here
