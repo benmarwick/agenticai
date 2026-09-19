@@ -1,0 +1,5 @@
+Component,Job,Example
+Permissions,Decide which actions run automatically and which need your approval,Block edits to restricted files
+Context,Assemble the content your model sees each turn,"AGENTS.md, conversation history, file contents, tool outputs"
+Loop,"Send your prompt to the model, run its tool calls and feed results back until the task finishes or you stop it","Plan, then the model acts, then checks its work, then repeats or moves to the next step in the plan"
+Interface,"Show where you type prompts, watch the agent work, and read its output","Terminal pane in RStudio or VS Code, so you can view the agent side-by-side with your  documents"

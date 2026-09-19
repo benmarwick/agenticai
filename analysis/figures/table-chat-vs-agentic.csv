@@ -1,12 +1,12 @@
 Dimension,Web-Based Chat,Agentic AI
-Objective,"Produces a relevant text response to the current prompt [@Xu_2024]","Completes an external goal across many steps [@Rafiee_2025]"
-Interaction pattern,"Turn-based question and answer in a browser session [@Kasneci_2023]","Perceive-plan-act-observe loop until a stopping condition [@Wang_2024]"
-Initiative,"Reactive; waits for the user [@Kasneci_2023]","Proactive; decomposes goals and starts sub-tasks [@Rafiee_2025; @Wang_2024]"
-Tool and environment action,"Text only by default; browsing or files when added [@Xu_2024]","Native tool calls plus APIs code execution and instrument control [@Schick_2023; @M_Bran_2024; @Boiko_2023]"
-Planning,"Implicit single-response reasoning [@Kasneci_2023]","Explicit task decomposition reflection and re-planning [@Wang_2024; @Park_2023]"
-Memory and state,"Short dialogue context with limited persistence [@Xu_2024]","Long-term memory stored plans and persistent agent state [@Park_2023; @Wang_2024]"
-Architecture,"Language model plus dialogue interface and safety filters [@Kasneci_2023]","Language model plus planner memory tool interfaces and orchestration [@Wang_2024; @Guo_2024; @Rafiee_2025]"
-Task duration,"Seconds to minutes per answer [@Xu_2024]","Minutes to hours or days of autonomous operation [@Boiko_2023; @Park_2023]"
-Evaluation,"Response quality factuality and helpfulness [@Xu_2024; @Kasneci_2023]","Task completion correct tool sequences and side effects [@Boiko_2023; @M_Bran_2024]"
-Risk profile,"Misinformation bias and over-reliance on fluent text [@Kasneci_2023]","All chat risks plus incorrect actions runaway loops and unsafe tool use [@Rafiee_2025]"
-Canonical example,"ChatGPT for explanations drafting and tutoring [@Kasneci_2023]","Chemistry agent that plans syntheses and operates instruments [@Boiko_2023]"
+Objective,Produces a relevant text response to the current prompt [@Xu_2024],Completes an external goal across many steps [@Rafiee_2025]
+Interaction pattern,Turn-based question and answer in a browser session [@Kasneci_2023],Perceive-plan-act-observe loop until a stopping condition [@Wang_2024]
+Initiative,Reactive; waits for the user [@Kasneci_2023],Proactive; decomposes goals and starts sub-tasks [@Rafiee_2025; @Wang_2024]
+Tool and environment action,Text only by default; browsing or files when added [@Xu_2024],Native tool calls plus APIs code execution and instrument control [@Schick_2023; @M_Bran_2024; @Boiko_2023]
+Planning,Implicit single-response reasoning [@Kasneci_2023],Explicit task decomposition reflection and re-planning [@Wang_2024; @Park_2023]
+Memory and state,Short dialogue context with limited persistence [@Xu_2024],Long-term memory stored plans and persistent agent state [@Park_2023; @Wang_2024]
+Architecture,Language model plus dialogue interface and safety filters [@Kasneci_2023],Language model plus planner memory tool interfaces and orchestration [@Wang_2024; @Guo_2024; @Rafiee_2025]
+Task duration,Seconds to minutes per answer [@Xu_2024],Minutes to hours or days of autonomous operation [@Boiko_2023; @Park_2023]
+Evaluation,Response quality factuality and helpfulness [@Xu_2024; @Kasneci_2023],Task completion correct tool sequences and side effects [@Boiko_2023; @M_Bran_2024]
+Risk profile,Misinformation bias and over-reliance on fluent text [@Kasneci_2023],All chat risks plus incorrect actions runaway loops and unsafe tool use [@Rafiee_2025]
+Canonical example,ChatGPT for explanations drafting and tutoring [@Kasneci_2023],Chemistry agent that plans syntheses and operates instruments [@Boiko_2023]
