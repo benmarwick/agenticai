@@ -1,14 +1,14 @@
-Type,Name,Source,Purpose
-MCP,r-mcptools,[@Anthropic2024],Exposes a running R session so the agent can execute code and read results
-MCP,refcheck,[@Anthropic2024],Searches publication databases and returns verified references with BibTeX
-MCP,scholar_mcp,[@Anthropic2024],Retrieves paper metadata and references and validates manuscript citations
-MCP,markitdown,[@Anthropic2024],"Converts DOCX files, PDFs and web pages to plain text the agent can read"
-MCP,open-scholar-peer,[@Anthropic2024],Queries Semantic Scholar arXiv and Scholar author records
-Skill,academic-paper-reviewer,[@Anthropic2025Skills],Simulates independent reviewers plus a devil's advocate for manuscripts
-Skill,deep-research,[@Anthropic2025Skills],Agent team for literature search verification synthesis and systematic review
-Skill,r-style-guide,[@Anthropic2025Skills],Naming spacing layout and function design conventions for R
-Skill,tidyverse-patterns,[@Anthropic2025Skills],Modern pipes joins grouping and string handling across the tidyverse
-Skill,quarto-authoring,[@Anthropic2025Skills],Authoring with Quarto documents cross-references citations and extensions
-Skill,zotero-cli,[@ZoteroMCP2026],Searches reads and annotates the author's Zotero library from the shell
-Instructions,global AGENTS.md,[@OpenCodeRules2026],Global style verification, operating rules, model persona and response rules (no sycophancy, list of banned words, etc.) for every session
-Instructions,project-specific AGENTS.md,[@OpenCodeRules2026],Specific custom project context and instructions auto-loaded at the start of each session
+Type,Name,Purpose,,,,
+Instructions,global AGENTS.md,Global style verification,,,,
+Instructions,project-specific AGENTS.md,Specific custom project context and instructions auto-loaded at the start of each session,,,,
+Skill,academic-paper-reviewer,Simulates independent reviewers plus a devil's advocate for manuscripts,,,,
+Skill,deep-research,Agent team for literature search verification synthesis and systematic review,,,,
+Skill,r-style-guide,"Conventions for writing R, e.g. naming, spacing, layout, function design ",,,,
+Skill,tidyverse-patterns,"Conventions for using tidyverse packages, e.g. modern pipes, joins, grouping, string handling",,,,
+Skill,quarto-authoring,"Authoring with Quarto documents, e.g. cross-references, citations, and extensions",,,,
+Skill,zotero-cli,"Searches, reads, and annotates the author's Zotero library from the shell",,,,
+MCP,r-mcptools,Exposes a running R session so the agent can execute code and read results,,,,
+MCP,refcheck,Searches publication databases and returns verified references with BibTeX,,,,
+MCP,scholar_mcp,Retrieves paper metadata and references and validates manuscript citations,,,,
+MCP,markitdown,"Converts DOCX files, PDFs and web pages to markdown the agent can read", operating rules, model persona and response rules (no sycophancy, list of banned words, etc.) for every session
+MCP,open-scholar-peer,Queries Semantic Scholar arXiv and Scholar author records,,,,

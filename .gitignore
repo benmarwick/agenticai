@@ -15,3 +15,12 @@ CLAIMS/*
 .httr-oauth
 .DS_Store
 .quarto
+
+# Open ScholarPeer working files (may contain confidential paper content)
+.brain/
+
+# Open ScholarPeer MCP runtime (venv + server, gitignored)
+.open-scholar-peer/
+
+# API keys (never commit)
+.env
