@@ -4,9 +4,9 @@ FROM rocker/verse:4.6.1
 # required
 MAINTAINER Your Name <your_email@somewhere.com>
 
-COPY . /<REPO>
+COPY . /agenticai
 
-WORKDIR /<REPO>
+WORKDIR /agenticai
 
 # go into the repo directory
 RUN . /etc/environment \
@@ -21,4 +21,4 @@ RUN . /etc/environment \
   && R -e "renv::restore()" \
   # render the manuscript into a docx, you'll need to edit this if you've
   # customised the location and name of your main qmd file
-  && R -e "quarto::quarto_render('/<REPO>/analysis/paper/paper.qmd')"
+  && R -e "quarto::quarto_render('agenticai/analysis/paper/paper.qmd')"
