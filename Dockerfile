@@ -1,9 +1,6 @@
 # get the base image, the rocker/verse has R, RStudio and pandoc
 FROM rocker/verse:4.6.1
 
-# required
-MAINTAINER Your Name <your_email@somewhere.com>
-
 COPY . /agenticai
 
 WORKDIR /agenticai
