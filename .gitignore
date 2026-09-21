@@ -16,6 +16,7 @@ CLAIMS/*
 .DS_Store
 .quarto
 .agents
+.opencode
 
 # Open ScholarPeer working files (may contain confidential paper content)
 .brain/
