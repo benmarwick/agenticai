@@ -1,21 +1,48 @@
-# get the base image, the rocker/verse has R, RStudio and pandoc
+# Use Rocker's RStudio image as the base
 FROM rocker/verse:4.6.1
 
-COPY . /agenticai
+# Install Quarto and system dependencies for R packages
+# This layer is stable; cached until apt deps or Quarto version changes
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    gdebi-core \
+    libglpk-dev \
+    libabsl-dev \
+    cmake \
+    default-jdk \
+    libmagick++-dev \
+    && curl -LO https://github.com/quarto-dev/quarto-cli/releases/download/v1.3.450/quarto-1.3.450-linux-amd64.deb \
+    && gdebi --non-interactive quarto-1.3.450-linux-amd64.deb \
+    && rm quarto-1.3.450-linux-amd64.deb \
+    && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /agenticai
+# --- RSTUDIO PROJECT AUTO-LOAD CONFIG ---
+RUN mkdir -p /home/rstudio/.local/share/rstudio/projects_settings && \
+    echo "/project/agentic-ai-for-archaeology.Rproj" > /home/rstudio/.local/share/rstudio/projects_settings/last-project-path && \
+    mkdir -p /home/rstudio/.config/rstudio && \
+    echo '{"initial_working_directory": "/project"}' > /home/rstudio/.config/rstudio/rstudio-prefs.json && \
+    chown -R rstudio:rstudio /home/rstudio/.local /home/rstudio/.config
 
-# go into the repo directory
-RUN . /etc/environment \
-  # Install linux depedendencies here
-  # e.g. need this for ggforce::geom_sina
-  && sudo apt-get update \
-  && sudo apt-get install libudunits2-dev -y \
-  # build this compendium package
-  && R -e "install.packages('remotes', repos = c(CRAN = 'https://cloud.r-project.org'))" \
-  && R -e "remotes::install_github(c('rstudio/renv', 'quarto-dev/quarto-r'))" \
-  # install pkgs we need
-  && R -e "renv::restore()" \
-  # render the manuscript into a docx, you'll need to edit this if you've
-  # customised the location and name of your main qmd file
-  && R -e "quarto::quarto_render('/agenticai/analysis/paper/paper.qmd')"
+# --- TERMINAL CONFIG ---
+RUN echo 'cd /project' >> /home/rstudio/.bashrc && \
+    echo "source /opt/conda/etc/profile.d/conda.sh" >> /home/rstudio/.bashrc
+
+# ---  RENV RESTORE (cache-optimized) ---
+# Copy only dependency manifests first so renv layer is cached
+# until renv.lock / .Rprofile / renv/activate.R changes
+WORKDIR /project
+COPY renv.lock renv.lock
+COPY renv/activate.R renv/activate.R
+COPY .Rprofile .Rprofile
+
+ENV RENV_PATHS_LIBRARY=/opt/renv/library
+ENV RENV_PATHS_CACHE=/opt/renv/cache
+RUN mkdir -p /opt/renv && chown -R rstudio:rstudio /opt/renv
+
+# Install renv and restore packages - most expensive layer, now cached
+RUN R -e "install.packages('renv', repos='https://cloud.r-project.org')" && \
+    R -e "options(renv.config.cache.symlinks = FALSE); renv::restore(prompt = FALSE)"
+
+# Copy remaining project files (cheap, invalidates only on source edits)
+COPY . /project
+RUN chown -R rstudio:rstudio /project
