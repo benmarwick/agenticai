@@ -15,6 +15,7 @@ CLAIMS/*
 .httr-oauth
 .DS_Store
 .quarto
+.agents
 
 # Open ScholarPeer working files (may contain confidential paper content)
 .brain/
