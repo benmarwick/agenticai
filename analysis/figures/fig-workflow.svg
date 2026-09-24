@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1200 720"
+   width="1200"
+   height="720"
+   font-family="Helvetica, Arial, sans-serif"
+   fill="#1a1a1a"
+   version="1.1"
+   id="svg48"
+   sodipodi:docname="fig-workflow-v2.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:c2pa="http://c2pa.org/manifest">
+  <metadata
+     id="metadata1">
+    <c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpjNTI3NzZhOS1hOGE4LTQ0M2UtOTg4Ni1hNmNkMGI3ZTUzZWUAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaGhgrMVH1GfTrvpO4+8IV/gAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo2OWU2NzZmZi0xZTFiLTRhODQtOThiNC1lYmEzNDIwMDNlNTVscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoP7OWveazKSuu6b/iHGo/KAAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg+D08Gk5HZSy56GiIAq01k3Ene40F8YJ9Qr20fGcyFrykZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaI1cWc0Y6F0HhEbaqPVI6moAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIIac8t2usVBSsxzABx6JgZFmDZzooZY94m9mg40B/ipBZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GQJDZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmM1Mjc3NmE5LWE4YTgtNDQzZS05ODg2LWE2Y2QwYjdlNTNlZS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjhkNDZmOGMxLWUwOWUtNDk3YS1iMDRmLTFkNjU2NDcyNjRhYXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCD4PTwaTkdlLLnoaIgCrTWTcSd7jQXxgn1CvbR8ZzIWvKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggU9ImJhNUd7e4oz7w4zU/5MSsaAa5jUVun7eSQdAeyTGiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggO8fCHkjguIQghgV7JnWx7Si3DcXV4/Hqz/chwAf0VqR0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQDoPo9F1bsRMgBMeWQshUCkrxl7d00MThFNaUiIux2CjtJuaTMRZzENo3+Chk//z8eNp16W5lCFaJM1vEuX4LEo=</c2pa:manifest>
+  </metadata>
+  <sodipodi:namedview
+     id="namedview48"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.71395267"
+     inkscape:cx="565.86384"
+     inkscape:cy="323.55086"
+     inkscape:window-width="1512"
+     inkscape:window-height="945"
+     inkscape:window-x="0"
+     inkscape:window-y="37"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g24" />
+  <metadata
+     id="metadata2" />
+  <title
+     id="title1">Researcher-directed agentic AI workflow</title>
+  <desc
+     id="desc1">Two lanes, researcher and agent, across four stages: research, plan, execute, verify. The researcher sets constraints first, approves each step before it runs, and verifies outputs. Rejected results return to the plan. All changes are recorded in Git, the plan file and the Quarto report.</desc>
+  <defs
+     id="defs2">
+    <marker
+       id="ah"
+       viewBox="0 0 10 10"
+       refX="9"
+       refY="5"
+       markerWidth="5"
+       markerHeight="5"
+       orient="auto-start-reverse"
+       preserveAspectRatio="xMidYMid">
+      <path
+         d="M0,0 L10,5 L0,10 z"
+         fill="#333"
+         id="path1" />
+    </marker>
+    <marker
+       id="ahb"
+       viewBox="0 0 10 10"
+       refX="9"
+       refY="5"
+       markerWidth="5"
+       markerHeight="5"
+       orient="auto-start-reverse"
+       preserveAspectRatio="xMidYMid">
+      <path
+         d="M0,0 L10,5 L0,10 z"
+         fill="#005a8c"
+         id="path2" />
+    </marker>
+    <marker
+       id="ahb-6"
+       viewBox="0 0 10 10"
+       refX="9"
+       refY="5"
+       markerWidth="0.001"
+       markerHeight="0.001"
+       orient="auto-start-reverse"
+       preserveAspectRatio="xMidYMid">
+      <path
+         d="M 0,0 10,5 0,10 Z"
+         fill="#005a8c"
+         id="path2-1" />
+    </marker>
+  </defs>
+  <!-- Constraints band -->
+  <rect
+     x="20"
+     y="15"
+     width="1160"
+     height="80"
+     rx="10"
+     fill="#EEEEEE"
+     stroke="#777"
+     stroke-width="2"
+     id="rect2" />
+  <text
+     x="40"
+     y="47"
+     font-size="24px"
+     font-weight="bold"
+     id="text2">Prior to starting work: Constraints set in AGENTS.md and harness permissions</text>
+  <text
+     x="40"
+     y="79"
+     font-size="21px"
+     id="text3">Protect restricted data (local vs remote models) · indicate style preferences · define what the agent may read, run and edit</text>
+  <!-- Stage headers -->
+  <g
+     font-size="26"
+     font-weight="bold"
+     text-anchor="middle"
+     id="g7">
+    <text
+       x="210"
+       y="132"
+       id="text4">1 Research</text>
+    <text
+       x="487"
+       y="132"
+       id="text5">2 Plan</text>
+    <text
+       x="764"
+       y="132"
+       id="text6">3 Execute</text>
+    <text
+       x="1041"
+       y="132"
+       id="text7">4 Verify</text>
+  </g>
+  <!-- Rejection loop -->
+  <path
+     d="M 1041,185 V 160 H 487 v 23"
+     fill="none"
+     stroke="#005a8c"
+     stroke-width="2.5"
+     marker-end="url(#ahb)"
+     id="path7"
+     sodipodi:nodetypes="cccc"
+     style="fill:none;fill-opacity:1;marker-end:url(#ahb)" />
+  <rect
+     style="fill:#ffffff;stroke-width:3.81425"
+     id="rect48"
+     width="438.38535"
+     height="29.320024"
+     x="556.20026"
+     y="143.76271"
+     rx="36.985126" />
+  <text
+     x="773.00916"
+     y="164.09344"
+     font-size="16.9619px"
+     font-style="italic"
+     fill="#005a8c"
+     text-anchor="middle"
+     id="text8"
+     style="stroke-width:0.807716">Rejecting the agent's work? Loop back to update the plan</text>
+  <!-- Lanes -->
+  <rect
+     x="20"
+     y="185"
+     width="1160"
+     height="160"
+     rx="10"
+     fill="#EAF3FA"
+     id="rect8" />
+  <rect
+     x="20"
+     y="375"
+     width="1160"
+     height="160"
+     rx="10"
+     fill="#FDF3DC"
+     id="rect9" />
+  <text
+     x="52"
+     y="265"
+     font-size="26"
+     font-weight="bold"
+     text-anchor="middle"
+     transform="rotate(-90 52 265)"
+     id="text9">Researcher</text>
+  <text
+     x="52"
+     y="455"
+     font-size="26"
+     font-weight="bold"
+     text-anchor="middle"
+     transform="rotate(-90 52 455)"
+     id="text10">Agent</text>
+  <!-- Researcher boxes (solid, square corners) -->
+  <rect
+     x="80"
+     y="195"
+     width="260"
+     height="140"
+     rx="4"
+     id="rect10"
+     style="fill:#cfe4f5;stroke:#0072b2;stroke-width:2.5" />
+  <rect
+     x="357"
+     y="195"
+     width="260"
+     height="140"
+     rx="4"
+     id="rect11"
+     style="fill:#cfe4f5;stroke:#0072b2;stroke-width:2.5" />
+  <rect
+     x="634"
+     y="195"
+     width="260"
+     height="140"
+     rx="4"
+     id="rect12"
+     style="fill:#cfe4f5;stroke:#0072b2;stroke-width:2.5" />
+  <rect
+     x="911"
+     y="195"
+     width="260"
+     height="140"
+     rx="4"
+     id="rect13"
+     style="fill:#cfe4f5;stroke:#0072b2;stroke-width:2.5" />
+  <g
+     font-size="22"
+     font-weight="bold"
+     id="g16">
+    <text
+       x="94"
+       y="233"
+       id="text13">Frames the question</text>
+    <text
+       x="371"
+       y="233"
+       id="text14">Writes the plan</text>
+    <text
+       x="648"
+       y="233"
+       id="text15">Evaluates each step</text>
+    <text
+       x="925"
+       y="233"
+       id="text16">Inspects the work</text>
+  </g>
+  <g
+     font-size="21"
+     id="g24">
+    <text
+       x="94"
+       y="264"
+       id="text17">Defines goals, scope,</text>
+    <text
+       x="94"
+       y="290"
+       id="text18">conceptual framework</text>
+    <text
+       x="371"
+       y="264"
+       id="text19">Applies judgement,</text>
+    <text
+       x="371"
+       y="290"
+       id="text20">critique and expertise</text>
+    <text
+       x="648"
+       y="264"
+       id="text21">Steers agent to action,</text>
+    <text
+       x="648"
+       y="290"
+       id="text22">prompts from the plan</text>
+    <text
+       x="925"
+       y="264"
+       id="text23">Verifies code, outputs,</text>
+    <text
+       x="925"
+       y="290"
+       id="text24">assesses plausibility</text>
+  </g>
+  <!-- Agent boxes (dashed, rounded) -->
+  <g
+     fill="#FFFFFF"
+     stroke="#B37700"
+     stroke-width="2.5"
+     stroke-dasharray="8 5"
+     id="g27">
+    <rect
+       x="80"
+       y="385"
+       width="260"
+       height="140"
+       rx="18"
+       id="rect24" />
+    <rect
+       x="357"
+       y="385"
+       width="260"
+       height="140"
+       rx="18"
+       id="rect25" />
+    <rect
+       x="634"
+       y="385"
+       width="260"
+       height="140"
+       rx="18"
+       id="rect26" />
+    <rect
+       x="911"
+       y="385"
+       width="260"
+       height="140"
+       rx="18"
+       id="rect27" />
+  </g>
+  <g
+     font-size="22"
+     font-weight="bold"
+     id="g30">
+    <text
+       x="96"
+       y="423"
+       id="text27">Searches literature</text>
+    <text
+       x="373"
+       y="423"
+       id="text28">Critiques the plan</text>
+    <text
+       x="650"
+       y="423"
+       id="text29">Executes the step</text>
+    <text
+       x="927"
+       y="423"
+       id="text30">Reports what it did</text>
+  </g>
+  <g
+     font-size="21"
+     id="g38">
+    <text
+       x="96"
+       y="454"
+       id="text31">Finds and validates</text>
+    <text
+       x="96"
+       y="480"
+       id="text32">references</text>
+    <text
+       x="373"
+       y="454"
+       id="text33">Updates plan.md</text>
+    <text
+       x="373"
+       y="480"
+       id="text34">Identify forking paths</text>
+    <text
+       x="650"
+       y="454"
+       id="text35">Build mode: writes code,</text>
+    <text
+       x="650"
+       y="480"
+       id="text36">runs code, and edits files</text>
+    <text
+       x="927"
+       y="454"
+       id="text37">Summary, diff and</text>
+    <text
+       x="927"
+       y="480"
+       id="text38">commit for review</text>
+  </g>
+  <!-- Decision gates -->
+  <g
+     fill="#222"
+     stroke="#fff"
+     stroke-width="2"
+     id="g39">
+    <polygon
+       points="884,181 898,195 884,209 870,195"
+       id="polygon38" />
+    <polygon
+       points="1161,181 1175,195 1161,209 1147,195"
+       id="polygon39" />
+  </g>
+  <!-- Researcher-agent arrows -->
+  <g
+     stroke="#333"
+     stroke-width="3"
+     fill="none"
+     id="g42">
+    <line
+       x1="210"
+       y1="338"
+       x2="210"
+       y2="382"
+       marker-start="url(#ah)"
+       marker-end="url(#ah)"
+       id="line39" />
+    <line
+       x1="487"
+       y1="338"
+       x2="487"
+       y2="382"
+       marker-start="url(#ah)"
+       marker-end="url(#ah)"
+       id="line40" />
+    <line
+       x1="764"
+       y1="338"
+       x2="764"
+       y2="382"
+       marker-end="url(#ah)"
+       id="line41" />
+    <line
+       x1="1041"
+       y1="382"
+       x2="1041"
+       y2="338"
+       marker-end="url(#ah)"
+       id="line42" />
+  </g>
+  <!-- Record arrows and band -->
+  <g
+     stroke="#666"
+     stroke-width="2.5"
+     fill="none"
+     id="g46">
+    <line
+       x1="210"
+       y1="527"
+       x2="210"
+       y2="553"
+       marker-end="url(#ah)"
+       id="line43" />
+    <line
+       x1="487"
+       y1="527"
+       x2="487"
+       y2="553"
+       marker-end="url(#ah)"
+       id="line44" />
+    <line
+       x1="764"
+       y1="527"
+       x2="764"
+       y2="553"
+       marker-end="url(#ah)"
+       id="line45" />
+    <line
+       x1="1041"
+       y1="527"
+       x2="1041"
+       y2="553"
+       marker-end="url(#ah)"
+       id="line46" />
+  </g>
+  <rect
+     x="20"
+     y="555"
+     width="1160"
+     height="80"
+     rx="10"
+     fill="#EEEEEE"
+     stroke="#777"
+     stroke-width="2"
+     id="rect46" />
+  <text
+     x="40"
+     y="587"
+     font-size="24px"
+     font-weight="bold"
+     id="text46">Inspectable record of decisons and reproducible results, for which the researcher is reponsible</text>
+  <text
+     x="40"
+     y="619"
+     font-size="21px"
+     id="text47">Git commits · saved plan.md · Quarto report with code and narrative text · verified bibliography</text>
+  <!-- Legend -->
+  <polygon
+     points="40,676 54,690 40,704 26,690"
+     fill="#222"
+     id="polygon47" />
+  <text
+     x="68"
+     y="697"
+     font-size="21px"
+     id="text48">Decision point: at these points nothing runs or is accepted without the researcher's inspection and approval</text>
+</svg>
