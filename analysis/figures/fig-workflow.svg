@@ -7,8 +7,11 @@
    fill="#1a1a1a"
    version="1.1"
    id="svg48"
-   sodipodi:docname="fig-workflow-v2.svg"
+   sodipodi:docname="fig-workflow.svg"
    inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   inkscape:export-filename="fig-workflow.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -27,15 +30,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.71395267"
-     inkscape:cx="565.86384"
-     inkscape:cy="323.55086"
+     inkscape:zoom="0.52266158"
+     inkscape:cx="583.5516"
+     inkscape:cy="395.09313"
      inkscape:window-width="1512"
-     inkscape:window-height="945"
+     inkscape:window-height="916"
      inkscape:window-x="0"
-     inkscape:window-y="37"
+     inkscape:window-y="38"
      inkscape:window-maximized="0"
-     inkscape:current-layer="g24" />
+     inkscape:current-layer="g24"
+     inkscape:export-bgcolor="#ffffffff" />
   <metadata
      id="metadata2" />
   <title
