@@ -24,7 +24,7 @@ jobs:
           load: true
           tags: agenticai:latest
           cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-to: type=gha,mode=min
 
       - name: Render Quarto Documents
         run: |
