@@ -1,20 +1,14 @@
 Type,Name,Purpose,Source
-Instructions,global AGENTS.md,Global style verification,local
+Instructions,global AGENTS.md,Global preferences and working habits applied across all projects,local
 Instructions,project-specific AGENTS.md,Specific custom project context and instructions auto-loaded at the start of each session,local
 Skill,deep-research,Agent team for literature search verification synthesis and systematic review,https://github.com/pafozz/hermes-deep-research
-Skill,r-style-guide,"Conventions for writing R, e.g. naming, spacing, layout, function design ",https://github.com/ab604/claude-code-r-skills
+Skill,r-style-guide,"Conventions for writing R, e.g. naming, spacing, layout, function design",https://github.com/ab604/claude-code-r-skills
 Skill,tidyverse-patterns,"Conventions for using tidyverse packages, e.g. modern pipes, joins, grouping, string handling",https://github.com/ab604/claude-code-r-skills
 Skill,quarto-authoring,"Authoring with Quarto documents, e.g. cross-references, citations, and extensions",https://github.com/posit-dev/skills
 Skill,zotero-cli,"Searches, reads, and annotates the author's Zotero library from the shell",https://github.com/Agents365-ai/zotero-cli-ai
 MCP,r-mcptools,Exposes a running R session so the agent can execute code and read results,https://github.com/posit-dev/mcptools
-MCP,refcheck,Searches publication databases and returns verified references with BibTeX,https://github.com/UMN-Choi-Lab/refcheck
-MCP,scholar_mcp, Searches Google Scholar and other sources by keywords and then reads inside papers,https://github.com/Liyux3/scholar-mcp
+MCP,refcheck,Searches publication databases and returns verified references with BibTeX,https://github.com/benchoi93/refcheck
+MCP,scholar_mcp,Searches Google Scholar and other sources by keywords and then reads inside papers,https://github.com/Liyux3/scholar-mcp
 MCP,markitdown,"Converts DOCX files, PDFs and web pages to markdown the agent can read",https://github.com/microsoft/markitdown
-MCP,open-scholar-peer,A community implementation of ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review,"https://github.com/amirkiarafiei/open-scholar-peer, @Goyal2026"
-MCP,playwright," Provides browser automation capabilities for LLMs, allowing AI agents to interact with web pages",https://github.com/microsoft/playwright-mcp
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
+MCP,open-scholar-peer,An open source implementation of ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review,"https://github.com/amirkiarafiei/open-scholar-peer, @Goyal2026"
+MCP,playwright,"Provides browser automation capabilities for LLMs, allowing AI agents to interact with web pages",https://github.com/microsoft/playwright-mcp
