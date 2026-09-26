@@ -8,20 +8,7 @@ Skill,quarto-authoring,"Authoring with Quarto documents, e.g. cross-references, 
 Skill,zotero-cli,"Searches, reads, and annotates the author's Zotero library from the shell",https://github.com/Agents365-ai/zotero-cli-ai
 MCP,r-mcptools,Exposes a running R session so the agent can execute code and read results,https://github.com/posit-dev/mcptools
 MCP,refcheck,Searches publication databases and returns verified references with BibTeX,https://github.com/benchoi93/refcheck
-<<<<<<< HEAD
 MCP,scholar_mcp,Searches Google Scholar and other sources by keywords and then reads inside papers,https://github.com/Liyux3/scholar-mcp
 MCP,markitdown,"Converts DOCX files, PDFs and web pages to markdown the agent can read",https://github.com/microsoft/markitdown
 MCP,open-scholar-peer,An open source implementation of ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review,"https://github.com/amirkiarafiei/open-scholar-peer, @Goyal2026"
 MCP,playwright,"Provides browser automation capabilities for LLMs, allowing AI agents to interact with web pages",https://github.com/microsoft/playwright-mcp
-=======
-MCP,scholar_mcp, Searches Google Scholar and other sources by keywords and then reads inside papers,https://github.com/Liyux3/scholar-mcp
-MCP,markitdown,"Converts DOCX files, PDFs and web pages to markdown the agent can read",https://github.com/microsoft/markitdown
-MCP,open-scholar-peer,A community implementation of ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review,"https://github.com/amirkiarafiei/open-scholar-peer, @Goyal2026"
-MCP,playwright," Provides browser automation capabilities for LLMs, allowing AI agents to interact with web pages",https://github.com/microsoft/playwright-mcp
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
->>>>>>> f19e03951fb9f97d15a2ce0cb626ff7370d6844a
