@@ -14,6 +14,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Free ~14 GB of runner disk space occupied by tools this build doesn't need.
+      # rocker/verse + renv packages can easily exceed 8 GB; without this step the
+      # Docker export hits "no space left on device" before it can finish.
+      - name: Free runner disk space
+        uses: jlumbroso/free-disk-space@v1.3.1
+        with:
+          tool-cache: true        # removes pre-installed language runtimes (~8 GB)
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: false     # keep swap — R/renv needs it if memory spikes
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -39,6 +53,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Manuscript-Word-Doc
-          path: |
-            paper.docx
+          path: paper.docx
           retention-days: 7

@@ -1,5 +1,5 @@
 # Use Rocker's RStudio image as the base
-FROM rocker/verse:4.6.1
+FROM rocker/tidyverse:4.6.1
 
 # Install Quarto and system dependencies for R packages
 # This layer is stable; cached until apt deps or Quarto version changes
@@ -41,7 +41,8 @@ RUN mkdir -p /opt/renv && chown -R rstudio:rstudio /opt/renv
 
 # Install renv and restore packages - most expensive layer, now cached
 RUN R -e "install.packages('renv', repos='https://cloud.r-project.org')" && \
-    R -e "options(renv.config.cache.symlinks = FALSE); renv::restore(prompt = FALSE)"
+    R -e "options(renv.config.cache.symlinks = FALSE); renv::restore(prompt = FALSE)"  && \
+    rm -rf /opt/renv/cache
 
 # Copy remaining project files (cheap, invalidates only on source edits)
 COPY . /project
