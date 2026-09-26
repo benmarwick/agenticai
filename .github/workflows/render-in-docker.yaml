@@ -42,7 +42,10 @@ jobs:
 
       - name: Render Quarto Documents
         run: |
-          docker run --name render-container agenticai:latest \
+          docker run --name render-container \
+            -e R_LIBS_USER=/opt/renv/library \
+            -e RENV_CONFIG_AUTOLOADER_ENABLED=FALSE \
+            agenticai:latest \
             bash -lc "quarto render analysis/paper/paper.qmd --to docx"
 
       - name: Download .docx from Container

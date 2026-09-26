@@ -28,8 +28,12 @@ RUN echo 'cd /project' >> /home/rstudio/.bashrc && \
     echo "source /opt/conda/etc/profile.d/conda.sh" >> /home/rstudio/.bashrc
 
 # ---  RENV RESTORE (cache-optimized) ---
-# Copy only dependency manifests first so renv layer is cached
-# until renv.lock / .Rprofile / renv/activate.R changes
+# All packages are installed into /opt/renv/library at build time.
+# R_LIBS_USER is set so every R process finds the library without going
+# through renv's autoloader (which re-bootstraps when it can't find itself).
+# RENV_CONFIG_AUTOLOADER_ENABLED=FALSE suppresses the autoloader entirely
+# so there is no re-download of renv at container start.
+
 WORKDIR /project
 COPY renv.lock renv.lock
 COPY renv/activate.R renv/activate.R
@@ -37,11 +41,18 @@ COPY .Rprofile .Rprofile
 
 ENV RENV_PATHS_LIBRARY=/opt/renv/library
 ENV RENV_PATHS_CACHE=/opt/renv/cache
-RUN mkdir -p /opt/renv && chown -R rstudio:rstudio /opt/renv
+# Tell every R process where the library lives — bypasses renv autoloader logic
+ENV R_LIBS_USER=/opt/renv/library
+# Disable renv's autoloader so it does not re-bootstrap at container start
+ENV RENV_CONFIG_AUTOLOADER_ENABLED=FALSE
 
-# Install renv and restore packages - most expensive layer, now cached
-RUN R -e "install.packages('renv', repos='https://cloud.r-project.org')" && \
-    R -e "options(renv.config.cache.symlinks = FALSE); renv::restore(prompt = FALSE)"  && \
+RUN mkdir -p /opt/renv/library /opt/renv/cache && \
+    chown -R rstudio:rstudio /opt/renv
+
+# Install renv into the system library, then restore all project packages.
+# Both steps run as root so the files land in /opt/renv/library (world-readable).
+RUN R -e "install.packages('renv', repos='https://cloud.r-project.org', lib='/usr/local/lib/R/library')" && \
+    R -e "options(renv.config.cache.symlinks = FALSE); renv::restore(prompt = FALSE, library = '/opt/renv/library')" && \
     rm -rf /opt/renv/cache
 
 # Copy remaining project files (cheap, invalidates only on source edits)
