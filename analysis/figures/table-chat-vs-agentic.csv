@@ -1,4 +1,4 @@
-Dimension,Web-Based Chat  [@Xu_2024; @Kasneci_202],Agentic AI [@Rafiee_2025; @Wang_2024; @Schick_2023; @M_Bran_2024; @Boiko_2023; @Park_2023; @Guo_2024]
+Dimension,Web-Based Chat,Agentic AI
 Objective,Produces a relevant text response to the current prompt,Completes an external goal across many steps 
 Interaction pattern,Turn-based question and answer in a browser session ,Perceive-plan-act-observe loop until a stopping condition
 Initiative,Reactive; waits for the user ,Proactive; decomposes goals and starts sub-tasks  

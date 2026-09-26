@@ -1,12 +1,12 @@
-Dimension,"Human in the Loop (HITL)","Human at the Helm"
-"Locus of authority","AI drives the workflow; the human approves at checkpoints","Human directs the workflow; AI executes under direction"
-"Human role","Intermittent reviewer, validator, or corrector","Continuous director and final decision-maker"
-"When humans act","At predefined intervention points (approval gates, error correction)","Throughout the process, including goal definition and result interpretation"
-"Control logic","Oversight of individual AI outputs (exception handling)","Steering the entire trajectory of the research task"
-"Accountability","Distributed between system and operator; often ambiguous in practice","Retained by the researcher from start to finish"
-"Epistemic stance","Machine output is assumed usable until flagged","Machine output is provisional until the researcher has understood and endorsed it"
-"Relation to research integrity","Can automate reasoning while the human only reacts","Preserves human agency; the researcher owns the reasoning and the result"
-"Scientific framing","HITL is a system-design pattern common in ML and RL [@Zanzotto2019; @Taylor2023]","Extends meaningful human control to research contexts [@Jonker2024; @BeckBurri2024]"
-"Regulatory echo","Absent in law; legal discourse requires oversight, not mere presence in a loop [@BeckBurri2024]","Aligns with human oversight and control requirements in AI regulation [@BeckBurri2024; @Monakhov2026]"
-"Risk profile","Risk of automation bias: the human rubber-stamps machine output","Risk reduced by continuous human direction, though the human must stay engaged"
-"Definition of collaboration","Human and AI as separable stages in a pipeline","Human and AI as a joint sensemaking process; humans add value AI cannot [@Hao2025]"
+Dimension,Human in the Loop,Human at the Helm
+Locus of authority,AI drives the workflow; the human approves at checkpoints,Human directs the workflow; AI executes under direction
+Human role,"Intermittent reviewer, validator, or corrector",Continuous director and final decision-maker
+When humans act,"At predefined intervention points (approval gates, error correction)","Throughout the process, including goal definition and result interpretation"
+Control logic,Oversight of individual AI outputs (exception handling),Steering the entire trajectory of the research task
+Accountability,Distributed between system and operator; often ambiguous in practice,Retained by the researcher from start to finish
+Epistemic stance,Machine output is assumed usable until flagged,Machine output is provisional until the researcher has understood and endorsed it
+Relation to research integrity,Can automate reasoning while the human only reacts,Preserves human agency; the researcher owns the reasoning and the result
+Scientific framing,HITL is a system-design pattern common in ML and RL [@Zanzotto2019; @Taylor2023],Extends meaningful human control to research contexts [@Jonker2024; @BeckBurri2024]
+Regulatory echo,"Absent in law; legal discourse requires oversight, not mere presence in a loop [@BeckBurri2024]",Aligns with human oversight and control requirements in AI regulation [@BeckBurri2024; @Monakhov2026]
+Risk profile,Risk of automation bias: the human rubber-stamps machine output,"Risk reduced by continuous human direction, though the human must stay engaged"
+Definition of collaboration,Human and AI as separable stages in a pipeline,Human and AI as a joint sensemaking process; humans add value AI cannot [@Hao2025]

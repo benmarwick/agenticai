@@ -42,3 +42,10 @@ output:
 Don't forget line numbers for JAS! Headings are bold, underline, nothing. And Arial Narrow 10pt for tables.
 
 See here for more information: http://rmarkdown.rstudio.com/articles_docx.html
+
+Here's a table so we can format that
+
+```{r}
+knitr::kable(head(iris))
+```
+
