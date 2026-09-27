@@ -6,6 +6,7 @@ Skill,r-style-guide,"Conventions for writing R, e.g. naming, spacing, layout, fu
 Skill,tidyverse-patterns,"Conventions for using tidyverse packages, e.g. modern pipes, joins, grouping, string handling",https://github.com/ab604/claude-code-r-skills
 Skill,quarto-authoring,"Authoring with Quarto documents, e.g. cross-references, citations, and extensions",https://github.com/posit-dev/skills
 Skill,zotero-cli,"Searches, reads, and annotates the author's Zotero library from the shell",https://github.com/Agents365-ai/zotero-cli-ai
+Skill,paperdoctor,"Suite of eleven skills that reviews a manuscript in progress by checking its claims, code, math, experiments, references and visual layout, then renders every finding into one interactive HTML report","https://github.com/QinghongLin/paperdoctor, @Lin2026"
 MCP,r-mcptools,Exposes a running R session so the agent can execute code and read results,https://github.com/posit-dev/mcptools
 MCP,refcheck,Searches publication databases and returns verified references with BibTeX,https://github.com/benchoi93/refcheck
 MCP,scholar_mcp,Searches Google Scholar and other sources by keywords and then reads inside papers,https://github.com/Liyux3/scholar-mcp
