@@ -9,14 +9,14 @@ renv/lock/
 renv/python/
 renv/sandbox/
 renv/staging/
-CLAIMS/*
-!CLAIMS/.gitkeep
-!CLAIMS/README.md
+CLAIMS/
 .httr-oauth
 .DS_Store
 .quarto
 .agents
 .opencode
+.agents/skills/zotero-cli
+.metadata_cache
 
 # Open ScholarPeer working files (may contain confidential paper content)
 .brain/
