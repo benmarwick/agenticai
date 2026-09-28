@@ -6,7 +6,9 @@ Skill,r-style-guide,"Conventions for writing R, e.g. naming, spacing, layout, fu
 Skill,tidyverse-patterns,"Conventions for using tidyverse packages, e.g. modern pipes, joins, grouping, string handling",https://github.com/ab604/claude-code-r-skills
 Skill,quarto-authoring,"Authoring with Quarto documents, e.g. cross-references, citations, and extensions",https://github.com/posit-dev/skills
 Skill,zotero-cli,"Searches, reads, and annotates the author's Zotero library from the shell",https://github.com/Agents365-ai/zotero-cli-ai
-Skill,paperdoctor,"Suite of eleven skills that reviews a manuscript in progress by checking its claims, code, math, experiments, references and visual layout, then renders every finding into one interactive HTML report","https://github.com/QinghongLin/paperdoctor, @Lin2026"
+Skill,paperdoctor,"Suite of skills that reviews a manuscript in progress by checking its claims, code, math, references and visual layout, then renders every finding into one interactive HTML report","https://github.com/QinghongLin/paperdoctor, @Lin2026"
+Skill,open-scholar-skill,"Suite of skills for assisting with social science research through a pipeline of verification gates, e.g. idea generation, theory exploration, study design, analysis, ethics, etc ","https://github.com/joshzyj/open-scholar-skill, @Zhang2026Vibe"
+Skill,manuscript-writing-review,"Reviews a scientific or engineering manuscript for writing quality, e.g. clutter, passive voice, sentence architecture, keyword consistency, and numerical or citation errors",https://github.com/labarba/sciwrite
 MCP,r-mcptools,Exposes a running R session so the agent can execute code and read results,https://github.com/posit-dev/mcptools
 MCP,refcheck,Searches publication databases and returns verified references with BibTeX,https://github.com/benchoi93/refcheck
 MCP,scholar_mcp,Searches Google Scholar and other sources by keywords and then reads inside papers,https://github.com/Liyux3/scholar-mcp
