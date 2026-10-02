@@ -4,6 +4,8 @@
 
 # How to Use Agentic AI for Responsible Archaeological Data Analysis
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23112130.svg)](https://doi.org/10.5281/zenodo.23112130)
+
 This repository contains the data and code for our paper:
 
 > Marwick, B. (submitted). *How to Use Agentic AI for Responsible
