@@ -1,0 +1,31 @@
+---
+title: "Supplementary Materials for 'How to Use Agentic AI for Responsible Archaeological Data Analysis'"
+bibliography: "../paper/references.bib"
+csl: "../templates/society-for-american-archaeology.csl"
+link-citations: true
+format: 
+  docx:
+    reference-doc: "../templates/template.docx"
+---
+
+
+## How These Files Work
+
+These are the AGENTS.md files we use to steer model behaviour toward our work habits and writing style. OpenCode reads them at the start of every model request, every step of every turn [@OpenCodeRules2026]. It includes their text in the system prompt, alongside environment details, MCP instructions, and skills. Because the harness re-reads and re-sends the text on every request, the instructions remain in the context window for the whole session.
+
+Models differ substantially in how reliably they follow such instructions. Instruction-following ability varies widely across models even on simple verifiable constraints [@Zhou2023IFEval; @Young2025InstructionAdherence; @Dussolle2025MIFEval], and models differ in how they weigh material at different positions within a single prompt [@Li2024InstructionRobustness]. Models also vary in whether they treat system-prompt text as more authoritative than user text [@Wallace2024InstructionHierarchy]. This means that the effectiveness of the instructions in AGENTS.md files will vary between models. 
+
+A model's adherence to instructions tends to decay as the conversation grows, even when the instruction text remains in the context window throughout. Performance on long-context tasks falls as input length increases, and this drop persists even when every piece of relevant information is retrieved correctly and irrelevant tokens are masked out [@Du2025ContextLength]. Models are most accurate when relevant material sits at the beginning or end of a long input, and less accurate when it sits in the middle [@Liu2024LostMiddle; @Hsieh2024RULER; @Modarressi2025NoLiMa]. Separately, extended multi-turn dialogue produces instruction drift, in which global constraints fade across topic shifts [@Myung2026ConversationalReliability; @Laban2025].
+
+Taken together, these results suggest some practical guidelines: keep the most important rules short; restate or invoke them where the work happens; start a new context window (restart OpenCode) frequently, for example at the completion of one step of your plan.  
+
+## The Three AGENTS.md Files
+
+- **`global-AGENTS.md`** This file affects models behavior across all projects where AI is used. It is mostly writing, formatting and epistemic rules to push the model to write efficiently and verify any claims it makes. We told our AI to generate a global AGENTS.md that applies to every project. On my computer this file is located in a typical location for global configuration files: `/Users/bmarwick/.config/opencode/AGENTS.md` 
+
+- **`project-AGENTS.md`** This file provides technical context on the specific project, and directs the model on project-level tasks. It tells the model we are using the R programming language and writing in a Quarto document. It gives instructions to tools and MCP servers that were used on the project. It provides an agent coordination protocol for multiple agents to work together on the project without conflict. This file is mostly AI-generated from our instructions to the agent, and located at the top level of the project folder, e.g. `my-project/AGENTS.md`
+
+- **`paper-AGENTS.md`** This file attempts to guide the model on writing style. It is a mix of technical preferences (e.g. use inline R code for numbers in sentences in the Quarto document) and stylistic preferences (e.g. keep most sentences under 30 words and vary sentence length). The writing style instructions overlap with the global agents instructions, but here they are specifically tailored to the target journal and article type. This file is mostly AI-generated from our instructions to the agent, and is in the same directory as our Quarto document, e.g. `my-project/paper/AGENTS.md`
+
+## References Cited
+

@@ -37,17 +37,3 @@ These rules come from a style study of "How to Use Replication Assignments for T
 10. Describe methods and workflows with the same specificity the paper uses for its compendium: name the files, the repositories, the licenses, and the steps needed for another researcher to reproduce every result in the manuscript.
 
 # End of instructions. ok to modify below here
-
-## Markdown formatting: one line per paragraph
-
-Write one line per paragraph in every markdown file in this project, including `paper.qmd`, notes, and scratch files.
-
-Never hard-wrap a paragraph across several lines. Do not break lines at a fixed column width, at sentence boundaries, or anywhere else. Put the whole paragraph on a single line, then leave one blank line before the next paragraph.
-
-This makes the raw markdown readable in a terminal and in diffs, because a diff then reports one changed paragraph as one changed line rather than scattering edits across a wrapped block.
-
-Keep each list item on its own line. Separate a list from surrounding prose with a blank line, and separate a list from a heading with a blank line. Do not leave blank lines between consecutive list items.
-
-Leave these structures on their own lines: headings, blank lines, list items, block quotes, table rows, and fenced code blocks.
-
-Reflows of this kind must change whitespace only. Never reword, reorder, or drop content while unwrapping a paragraph. After any reformat, verify that the text is byte-identical once whitespace is collapsed.

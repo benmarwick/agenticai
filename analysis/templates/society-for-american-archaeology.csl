@@ -132,21 +132,28 @@
   </macro>
   <macro name="access">
     <choose>
-      <if type="graphic report thesis" match="any">
-        <text macro="archive"/>
-      </if>
-      <else-if type="article-journal" match="any">
-        <text variable="DOI" prefix="https://doi.org/"/>
-      </else-if>
-      <else-if type="webpage post-weblog post article-magazine article-newspaper broadcast dataset" match="any">
+      <if type="webpage post-weblog post article-magazine article-newspaper broadcast dataset" match="any">
         <group delimiter=", ">
           <text variable="genre"/>
-          <text variable="URL"/>
+          <choose>
+            <if variable="DOI">
+              <text variable="DOI" prefix="https://doi.org/"/>
+            </if>
+            <else>
+              <text variable="URL"/>
+            </else>
+          </choose>
           <group delimiter=" ">
             <text term="accessed"/>
             <date form="text" variable="accessed"/>
           </group>
         </group>
+      </if>
+      <else-if variable="DOI">
+        <text variable="DOI" prefix="https://doi.org/"/>
+      </else-if>
+      <else-if type="graphic report thesis" match="any">
+        <text macro="archive"/>
       </else-if>
       <else-if type="bill book graphic legal_case motion_picture report song article-journal article-magazine article-newspaper chapter paper-conference" match="none">
         <text macro="archive"/>
@@ -281,13 +288,18 @@
       <else-if type="article-journal" match="any">
         <text variable="collection-title" text-case="title" suffix=", "/>
       </else-if>
-      <else-if type="paper-conference" match="any">
-        <text term="presented at" text-case="capitalize-first" suffix=" "/>
-      </else-if>
     </choose>
     <choose>
       <if type="paper-conference" match="any">
-        <text variable="event-title" text-case="title"/>
+        <choose>
+          <if variable="container-title">
+            <text variable="container-title" text-case="title" font-style="italic"/>
+          </if>
+          <else>
+            <text term="presented at" text-case="capitalize-first" suffix=" "/>
+            <text variable="event-title" text-case="title"/>
+          </else>
+        </choose>
       </if>
       <else-if type="chapter" match="any">
         <text variable="container-title" text-case="title" font-style="italic"/>
@@ -442,17 +454,19 @@
       </group>
     </layout>
   </citation>
-  <!-- AAP house style: list all authors up to 7; from 8 authors, list the first 7 then "et al."
-       Verified 2026-09-26 against the published reference list of Cootsona, Castillo & Sunseri
-       2026, Advances in Archaeological Practice, doi:10.1017/aap.2026.10173 (published 17 Sept 2026):
-       Carroll et al. 2021 and Cummins et al. 2023 list all 6 authors; Laluk et al. 2022 and
-       Taitingfong et al. 2024 list 7 then "et al.". Locally patched from 11/7 to 8/7.
-       NOTE this deliberately does NOT follow the CSL upstream repository, which on 2026-09-17
-       replaced the standalone SAA style with a dependent style on chicago-author-date (7/3).
-       chicago-author-date would also add quotation marks around article titles, insert spaces
-       around the issue parenthesis and colon, and elide page ranges (4072-85), none of which
-       match AAP's published output. See analysis/templates/README-csl.md. -->
-  <bibliography et-al-min="8" et-al-use-first="7" line-spacing="2" hanging-indent="true">
+  <!-- Author-list length follows the written AAP instructions (Cambridge "Preparing your
+       materials"), fetched 2026-09-29: "list all author names for works with five or fewer
+       authors; for references with six or more authors, list the first three authors
+       followed by et al." Hence bibliography 6/3 below, and citation 3/1 above.
+       This deliberately departs from the upstream CSL repository, which on 2026-09-17
+       replaced the standalone SAA style with a dependent style on chicago-author-date
+       (bibliography 7/3). chicago-author-date would also add quotation marks around
+       article titles, insert spaces around the issue parenthesis and colon, and elide
+       page ranges (4072-85), none of which match this journal's published output.
+       Retained from chicago-author-date: headline-style titles, the tight
+       "volume(issue):pages" locator, unelided page ranges, DOIs in https://doi.org/ URL
+       form, and author names in full rather than initials. -->
+  <bibliography et-al-min="6" et-al-use-first="3" line-spacing="2" hanging-indent="true">
     <sort>
       <key macro="contributors"/>
       <key variable="issued"/>
