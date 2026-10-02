@@ -11,10 +11,10 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 # Please put your title here to include it in the file below.
-Title <- "A Practical Guide to Responsible Agentic AI for Archaeological Data Analysis in R"
+Title <- "How to Use Agentic AI for Responsible Archaeological Data Analysis"
 ```
 
-# A Practical Guide to Responsible Agentic AI for Archaeological Data Analysis in R
+# How to Use Agentic AI for Responsible Archaeological Data Analysis
 
 
 This repository contains the data and code for our paper:

@@ -2,27 +2,27 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# A Practical Guide to Responsible Agentic AI for Archaeological Data Analysis in R
+# How to Use Agentic AI for Responsible Archaeological Data Analysis
 
 This repository contains the data and code for our paper:
 
-> Marwick, B. (submitted). *A Practical Guide to Responsible Agentic AI
-> for Archaeological Data Analysis in R*. Advances in Archaeological
-> Practice <https://doi.org/xxx/xxx>
+> Marwick, B. (submitted). *How to Use Agentic AI for Responsible
+> Archaeological Data Analysis*. Advances in Archaeological Practice
+> <https://doi.org/xxx/xxx>
 
 Our pre-print is online here:
 
-> Marwick, B. (2026). *A Practical Guide to Responsible Agentic AI for
-> Archaeological Data Analysis in R*. Advances in Archaeological
-> Practice Accessed 02 Oct 2026. Online at <https://doi.org/xxx/xxx>
+> Marwick, B. (2026). *How to Use Agentic AI for Responsible
+> Archaeological Data Analysis*. Advances in Archaeological Practice
+> Accessed 02 Oct 2026. Online at <https://doi.org/xxx/xxx>
 
 ### How to cite
 
 Please cite this compendium as:
 
-> Marwick, B. (2026). *Compendium for A Practical Guide to Responsible
-> Agentic AI for Archaeological Data Analysis in R*. Accessed 02 Oct
-> 2026. Online at <https://doi.org/xxx/xxx>
+> Marwick, B. (2026). *Compendium for How to Use Agentic AI for
+> Responsible Archaeological Data Analysis*. Accessed 02 Oct 2026.
+> Online at <https://doi.org/xxx/xxx>
 
 ## Contents
 
