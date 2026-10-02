@@ -5,7 +5,7 @@ agree to abide by our [code of conduct](CONDUCT.md).
 
 ## Getting Started
 
-* Make sure you have a [GitHub account](https://github.com/signup/free). If you are not familar with git and GitHub, take a look at <http://happygitwithr.com/> to get started.
+* Make sure you have a [GitHub account](https://github.com/signup/free). If you are not familiar with git and GitHub, take a look at <http://happygitwithr.com/> to get started.
 * [Submit a post for your issue](https://github.com/<USERNAME>/<REPO>/issues/), assuming one does not already exist.
   * Clearly describe your issue, including steps to reproduce when it is a bug, or some justification for a proposed improvement.
 * [Fork](https://github.com/<USERNAME>/<REPO>/#fork-destination-box) the repository on GitHub to make a copy of the repository on your account. Or use this line in your shell terminal:
@@ -32,7 +32,7 @@ some changes or improvements or alternatives.
 Some things you can do that will increase the chance that your pull request is accepted:
 
 * Engage in discussion on [your issue](https://github.com/<USERNAME>/<REPO>/issues/).
-* Be familiar with the backround literature cited in the [README](README.Rmd)
+* Be familiar with the background literature cited in the [README](README.qmd)
 * Write tests that pass.
 * Follow our [code style guide](http://adv-r.had.co.nz/Style.html).
 * Write a [good commit message](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).

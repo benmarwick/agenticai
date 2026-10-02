@@ -1,4 +1,4 @@
-Type,Name,Purpose,Source,Licence
+Type,Name,Purpose,Source,License
 Instructions,global AGENTS.md,Global preferences and working habits applied across all projects,local,MIT
 Instructions,project-specific AGENTS.md,Specific custom project context and instructions auto-loaded at the start of each session,local,MIT
 Skill,deep-research,Agent team for literature search verification synthesis and systematic review,pafozz/hermes-deep-research,MIT
